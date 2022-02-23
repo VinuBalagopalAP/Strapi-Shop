@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/categories": {
+    "/multi-products": {
       "get": {
         "responses": {
           "200": {
@@ -22,7 +22,14 @@
                               "Name": {
                                 "type": "string"
                               },
-                              "multi_products": {
+                              "Description": {
+                                "type": "string"
+                              },
+                              "Price": {
+                                "type": "number",
+                                "format": "float"
+                              },
+                              "categories": {
                                 "type": "object",
                                 "properties": {
                                   "data": {
@@ -39,14 +46,7 @@
                                             "Name": {
                                               "type": "string"
                                             },
-                                            "Description": {
-                                              "type": "string"
-                                            },
-                                            "Price": {
-                                              "type": "number",
-                                              "format": "float"
-                                            },
-                                            "categories": {
+                                            "multi_products": {
                                               "type": "object",
                                               "properties": {
                                                 "data": {
@@ -63,7 +63,14 @@
                                                           "Name": {
                                                             "type": "string"
                                                           },
-                                                          "multi_products": {
+                                                          "Description": {
+                                                            "type": "string"
+                                                          },
+                                                          "Price": {
+                                                            "type": "number",
+                                                            "format": "float"
+                                                          },
+                                                          "categories": {
                                                             "type": "object",
                                                             "properties": {
                                                               "data": {
@@ -82,6 +89,9 @@
                                                                 }
                                                               }
                                                             }
+                                                          },
+                                                          "qty": {
+                                                            "type": "string"
                                                           },
                                                           "createdAt": {
                                                             "type": "string",
@@ -387,9 +397,6 @@
                                                 }
                                               }
                                             },
-                                            "qty": {
-                                              "type": "string"
-                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -442,6 +449,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "qty": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -669,7 +679,7 @@
           }
         },
         "tags": [
-          "Category"
+          "Multi-product"
         ],
         "parameters": [
           {
@@ -774,7 +784,14 @@
                             "Name": {
                               "type": "string"
                             },
-                            "multi_products": {
+                            "Description": {
+                              "type": "string"
+                            },
+                            "Price": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "categories": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -791,14 +808,7 @@
                                           "Name": {
                                             "type": "string"
                                           },
-                                          "Description": {
-                                            "type": "string"
-                                          },
-                                          "Price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "categories": {
+                                          "multi_products": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -815,7 +825,14 @@
                                                         "Name": {
                                                           "type": "string"
                                                         },
-                                                        "multi_products": {
+                                                        "Description": {
+                                                          "type": "string"
+                                                        },
+                                                        "Price": {
+                                                          "type": "number",
+                                                          "format": "float"
+                                                        },
+                                                        "categories": {
                                                           "type": "object",
                                                           "properties": {
                                                             "data": {
@@ -834,6 +851,9 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "qty": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -1139,9 +1159,6 @@
                                               }
                                             }
                                           },
-                                          "qty": {
-                                            "type": "string"
-                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -1194,6 +1211,9 @@
                                   }
                                 }
                               }
+                            },
+                            "qty": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -1400,7 +1420,7 @@
           }
         },
         "tags": [
-          "Category"
+          "Multi-product"
         ],
         "parameters": [],
         "requestBody": {
@@ -1414,6 +1434,13 @@
                     "properties": {
                       "Name": {
                         "type": "string"
+                      },
+                      "Description": {
+                        "type": "string"
+                      },
+                      "Price": {
+                        "type": "number",
+                        "format": "float"
                       }
                     }
                   }
@@ -1424,7 +1451,7 @@
         }
       }
     },
-    "/categories/{id}": {
+    "/multi-products/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -1444,7 +1471,14 @@
                             "Name": {
                               "type": "string"
                             },
-                            "multi_products": {
+                            "Description": {
+                              "type": "string"
+                            },
+                            "Price": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "categories": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -1461,14 +1495,7 @@
                                           "Name": {
                                             "type": "string"
                                           },
-                                          "Description": {
-                                            "type": "string"
-                                          },
-                                          "Price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "categories": {
+                                          "multi_products": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -1485,7 +1512,14 @@
                                                         "Name": {
                                                           "type": "string"
                                                         },
-                                                        "multi_products": {
+                                                        "Description": {
+                                                          "type": "string"
+                                                        },
+                                                        "Price": {
+                                                          "type": "number",
+                                                          "format": "float"
+                                                        },
+                                                        "categories": {
                                                           "type": "object",
                                                           "properties": {
                                                             "data": {
@@ -1504,6 +1538,9 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "qty": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -1809,9 +1846,6 @@
                                               }
                                             }
                                           },
-                                          "qty": {
-                                            "type": "string"
-                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -1864,6 +1898,9 @@
                                   }
                                 }
                               }
+                            },
+                            "qty": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -2070,7 +2107,7 @@
           }
         },
         "tags": [
-          "Category"
+          "Multi-product"
         ],
         "parameters": [
           {
@@ -2105,7 +2142,14 @@
                             "Name": {
                               "type": "string"
                             },
-                            "multi_products": {
+                            "Description": {
+                              "type": "string"
+                            },
+                            "Price": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "categories": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -2122,14 +2166,7 @@
                                           "Name": {
                                             "type": "string"
                                           },
-                                          "Description": {
-                                            "type": "string"
-                                          },
-                                          "Price": {
-                                            "type": "number",
-                                            "format": "float"
-                                          },
-                                          "categories": {
+                                          "multi_products": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -2146,7 +2183,14 @@
                                                         "Name": {
                                                           "type": "string"
                                                         },
-                                                        "multi_products": {
+                                                        "Description": {
+                                                          "type": "string"
+                                                        },
+                                                        "Price": {
+                                                          "type": "number",
+                                                          "format": "float"
+                                                        },
+                                                        "categories": {
                                                           "type": "object",
                                                           "properties": {
                                                             "data": {
@@ -2165,6 +2209,9 @@
                                                               }
                                                             }
                                                           }
+                                                        },
+                                                        "qty": {
+                                                          "type": "string"
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -2470,9 +2517,6 @@
                                               }
                                             }
                                           },
-                                          "qty": {
-                                            "type": "string"
-                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -2525,6 +2569,9 @@
                                   }
                                 }
                               }
+                            },
+                            "qty": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -2731,7 +2778,7 @@
           }
         },
         "tags": [
-          "Category"
+          "Multi-product"
         ],
         "parameters": [
           {
@@ -2757,7 +2804,14 @@
                       "Name": {
                         "type": "string"
                       },
-                      "multi_products": {
+                      "Description": {
+                        "type": "string"
+                      },
+                      "Price": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "categories": {
                         "type": "array",
                         "items": {
                           "oneOf": [
@@ -2770,6 +2824,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "qty": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -2972,7 +3029,7 @@
           }
         },
         "tags": [
-          "Category"
+          "Multi-product"
         ],
         "parameters": [
           {

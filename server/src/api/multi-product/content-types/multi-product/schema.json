@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "products",
+  "kind": "collectionType",
+  "collectionName": "multi_products",
   "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "Singu-product",
+    "singularName": "multi-product",
+    "pluralName": "multi-products",
+    "displayName": "Multi-product",
     "description": ""
   },
   "options": {
@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "Name": {
       "type": "string",
       "required": true
     },
@@ -24,14 +24,14 @@
       "type": "float",
       "required": true
     },
-    "qty": {
-      "type": "integer",
-      "required": true
-    },
     "categories": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "multi_products"
+    },
+    "qty": {
+      "type": "string"
     }
   }
 }

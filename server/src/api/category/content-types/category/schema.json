@@ -16,10 +16,10 @@
       "required": true,
       "unique": true
     },
-    "products": {
+    "multi_products": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::product.product",
+      "target": "api::multi-product.multi-product",
       "mappedBy": "categories"
     }
   }

@@ -53,7 +53,7 @@ class Attributes {
   String title;
   String description;
   double price;
-  int qty;
+  String qty;
   // int variants;
 
   factory Attributes.fromJson(Map<String, dynamic> json) => Attributes(

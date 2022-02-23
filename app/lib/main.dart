@@ -23,7 +23,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   void setData() async {
     await Provider.of<ProductNotifier>(context, listen: false)
-        .getProductModel();
+        .getProductListModel();
   }
 
   @override
@@ -40,33 +40,27 @@ class _MyAppState extends State<MyApp> {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text(data.productModel.data.attributes.title),
+          title: const Text("Products"),
         ),
-        body: Center(
-          child: ListView.builder(
-            shrinkWrap: true,
-            // itemCount: data.productModel.data.attributes.variants,
-            itemCount: 3,
-
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  Text(data.productModel.data.attributes.title),
-                  Text(data.productModel.data.attributes.description),
-                ],
-              );
-            },
-            // return Column(
-            //   children: [
-            //     Text(data.productModel.data.attributes.title),
-            //     Text(data.productModel.data.attributes.description),
-            //     Text("Price: \$ " +
-            //         data.productModel.data.attributes.price.toString()),
-            //     Text("Quantity: " +
-            //         data.productModel.data.attributes.qty.toString()),
-            //   ],
-            // ),
-          ),
+        body: ListView.builder(
+          shrinkWrap: true,
+          itemCount: data.getProductList.data.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text(data.getProductList.data[index].attributes.name),
+              subtitle:
+                  Text(data.getProductList.data[index].attributes.description),
+              trailing: ElevatedButton(
+                child: const Text("+"),
+                onPressed: () {
+                  data.setQuantity(
+                    data.getProductList.data[index].id,
+                    int.parse(data.getProductList.data[index].attributes.qty),
+                  );
+                },
+              ),
+            );
+          },
         ),
       ),
     );
