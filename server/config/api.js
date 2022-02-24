@@ -1,7 +1,10 @@
-module.exports = {
+module.exports = ({ env }) => ({
+  responses: {
+    privateAttributes: ["createdAt", "updatedAt", "publishedAt"],
+  },
   rest: {
     defaultLimit: 25,
     maxLimit: 100,
     withCount: true,
   },
-};
+});
